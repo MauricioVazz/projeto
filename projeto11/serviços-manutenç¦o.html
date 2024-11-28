@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Company</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/Eco-svg.svg" type="image/x-icon">
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Preload -->
+    <link rel="preload" as="image" href="img/banner.jpg">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-bar">
+            <div class="container">
+                <nav class="header-nav">
+                    <a href="index.html" class="logo">
+                        <img src="img/Eco-svg.svg" alt="Logo" width="150" height="150" />
+                    </a>
+                    <ul class="header-menu">
+                        <li><a href="index.html" class="header-link">Home</a></li>
+                        <li><a href="index.html#descricao" class="header-link">Descrição</a></li>
+                        <li><a href="index.html#servicos" class="header-link">Serviços</a></li>
+                        <li><a href="index.html#cursos" class="header-link">Cursos</a></li>
+                        <li><a href="index.html" class="header-link">Sobre Nós</a></li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="#" class="btn login-btn">
+                            <span>Login</span>
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </a>
+                        <a href="#" class="btn cart-btn">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </a>
+                    </div>
+
+                    <div class="menu-toggle">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="h2 section-title text-center">
+                    Manutenção de Produtos
+                </h2>
+            </div>
+
+            <div class="section-text">
+                <p class="section-text text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsa natus distinctio aliquam corrupti at omnis vel facere magni, inventore, laboriosam ipsum in odit, quae minima cupiditate tempora rem non.
+                </p>
+            </div>
+
+            <div class="services-img">
+                <img src="img/servicos/servico-3-img.png">
+            </div>
+
+            <div class="section-text">
+                <p class="section-text text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsa natus distinctio aliquam corrupti at omnis vel facere magni, inventore, laboriosam ipsum in odit, quae minima cupiditate tempora rem non.
+                </p>
+            </div>
+
+            <a href="#" class="btn has-before">
+                <span class="span">Comprar</span>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Header scrow -->
+
+    <script>
+        document.addEventListener("scroll", function () {
+            const header = document.querySelector(".header-bottom");
+            if (window.scrollY > 50) {
+                header.classList.add("active");
+            } else {
+                header.classList.remove("active");
+            }
+        });
+    </script>
+
+    <!-- Mobile -->
+    <script type="text/javascript">
+        const navToggleBtn = document.querySelector('.nav-toggle-btn');
+        const navbar = document.querySelector('.navbar');
+
+        navToggleBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Alterna a classe "active"
+        });
+
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

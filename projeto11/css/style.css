@@ -1,0 +1,544 @@
+/*------------------------*\
+ style
+\*------------------------*/
+
+/*------------------------*\
+ copyright 2024 - 
+\*------------------------*/
+
+/*------------------------*\
+ Propriedade customisadas
+\*------------------------*/
+
+:root {
+    /* Color */
+    --black: #000000;
+    --preto: #1f1f1f;
+    --branco: #ffffff;
+    --bege: #ffeee7;
+    --azulmarinho: #2f2f51;
+    --grafit: #4a4a4a;
+    --verde: #51c751;
+    --verdelogo: #3b6050;
+    --verdebanner: #344947;
+    --verdebotao: #7fd63d;
+    --cinzagrafit-tranparente: #363636da;
+
+    /* Tipografia */
+    --ff-poppins: "Poppins", sans-serif;
+
+    --fs-40: 4rem;/*4x16px*/
+    --fs-30: 3rem;
+    --fs-24: 2.4rem;
+    --fs-18: 1.8rem;
+    --fs-14: 1.4rem;
+    --fs-12: 1.3rem;
+
+    --fw-300: 300;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    /* Espaço */
+    --section-padding: 80px;
+
+    /* Borda */
+    --radius-5: 5px;
+    --radius-8: 8px;
+
+    /* Sombra */
+    --shadow-1: 10px 0 60px hsla(0, 0%, 15%, 0.07);
+    --shadow-2: 10px 0 60px hsla(0, 0%, 15%, 0.1);
+    --shadow-3: 10px 0 60px #1d1d1d1f;
+    --shadow-4: 10px 0 60px #1d1d1d10;
+
+    /* Transição */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.50s ease;
+    --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+/*------------------------*\
+ Reset
+\*------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+img,
+span,
+data,
+input,
+botton,
+textarea,
+ion-icon {
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    height: auto;
+}
+
+input,
+select,
+textarea {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+input,
+select,
+text {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    font-family: var(--ff-poppins);
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bege);
+    color: var(--black);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+:focus-visible {
+    outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bege);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--verdebanner);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--verdebotao);
+}
+
+/*------------------------*\
+ style - reuso
+\*------------------------*/
+
+.container {
+    padding-inline: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    color: var(--black);
+    background-color: var(--verdebotao);
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    width: 150px;
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-14);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    border-radius: var(--radius-5);
+    gap: 10px;
+    max-width: max-content;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.has-bg-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section {
+    padding-block: var(--section-padding);
+}
+
+.h1,
+.h2,
+.h3 {
+    font-family: var(--ff-poppins);
+    line-height: 1.3;
+}
+
+.h1,
+.h2 {
+    text-transform: uppercase;
+}
+
+.h1,
+.h3 {
+    font-weight: var(--fw-600);
+}
+
+.h1 {
+    color: var(--branco);
+    font-size: var(--fs-40);
+}
+
+.h2,
+.h3 {
+    color: var(--preto);
+}
+
+.h2 {
+    font-size: var(--fs-30);
+}
+
+.h3 {
+    font-size: var(--fs-24);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grin-list {
+    display: grid;
+    gap: 30px;
+}
+
+/*------------------------*\
+ Header
+\*------------------------*/
+
+.header-bar {
+    background-color: var(--verdebanner);
+    box-shadow: var(--shadow-2);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.header-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    font-size: var(--fs-14);
+    font-weight: var(--fw-600);
+    color: var(--branco);
+    text-transform: uppercase;
+    transition: color var(--transition-1);
+}
+
+.header-link:hover {
+    color: var(--verdebotao);
+}
+
+/* header botoes */
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.header-actions a ion-icon {
+    font-size: 2.3rem; /* Aumenta o tamanho do ícone */
+}
+
+.login-btn,
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--black);
+    font-size: var(--fs-14);
+    text-transform: uppercase;
+    transition: background-color var(--transition-1);
+}
+
+.login-btn:hover,
+.cart-btn:hover {
+    background-color: var(--azulmarinho);
+    color: var(--branco);
+}
+
+/* Responsa */
+
+@media (max-width: 768px) {
+    .header-menu {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--verdebanner);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .header-menu.active {
+        display: flex;
+    }
+
+    .header-actions {
+        flex-direction: row-reverse;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: var(--fs-30);
+        cursor: pointer;
+        color: var(--branco);
+    }
+}
+
+/* Oculta o menu hambúrguer em telas grandes */
+.menu-toggle {
+    display: none;
+}
+
+/* Exibe o menu hambúrguer apenas em telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-menu {
+        display: none; /* Oculta o menu principal por padrão */
+    }
+
+    .header-menu.active {
+        display: flex; /* Mostra o menu quando ativado */
+        flex-direction: column; /* Torna os itens empilhados */
+        gap: 15px; /* Adiciona espaçamento entre os itens */
+        background-color: var(--verdebanner); /* Fundo do menu */
+        position: absolute; /* Posiciona o menu sobre o conteúdo */
+        top: 100%; /* Alinha o menu logo abaixo do header */
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1000;
+    }
+}
+
+/* section */
+
+section {
+    padding-top: 80px;
+    scroll-margin-top: 100px;
+}
+
+/*------------------------*\
+ Hero
+\*------------------------*/
+
+/* Ajustes para o conteúdo abaixo do header */
+main {
+    margin-top: 0; /* Remove qualquer margem desnecessária */
+    padding-top: 180px;
+}
+
+.hero-text {
+    color: var(--branco);
+    margin-block: 15px 40px;
+}
+
+.hero {
+    --section-padding: 100px;
+    background-position: left;
+    padding-block-start: calc(var(--section-padding) + 40px);
+    padding-top: 60px;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+
+/*------------------------*\
+ Descricao
+\*------------------------*/
+
+.section-text {
+    margin-block: 15px 55px;
+}
+
+/*------------------------*\
+ Parallax
+\*------------------------*/
+
+.parallax {
+    min-height: 800px;
+    background-image: url("../img/paralax/jungle.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pricing::before {
+    inset: 0;
+    background-color: var(--cinzagrafit-tranparente);
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+.pricing .section-title {
+    color: var(--branco);
+}
+
+.pricing .section-text {
+    margin-block: 15px 55px;
+    color: var(--branco);
+}
+
+/*------------------------*\
+ Serviços
+\*------------------------*/
+
+.section-serviços {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0; /* Espaçamento acima e abaixo da seção */
+}
+
+/* imagens */
+
+.section-img {
+    display: grid; /* Usamos Grid para alinhar uniformemente os cards */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas uniformes */
+    gap: 20px; /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1200px; /* Limita a largura total da seção para centralizar */
+    padding: 0 20px; /* Espaçamento nas laterais */
+    margin: 0 auto; /* Centraliza a grade na página */
+}
+
+.servisces-img {
+    display: grid; /* Usamos flex aqui também para organizar os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
+    justify-content: space-between; /* Espaço igual entre os cards */
+    width: 100%;
+}
+
+.card-2 {
+    order: 2;
+}
+
+.card-3 {
+    order: 3;
+    white-space: nowrap;
+}
+
+.card-4 {
+    order: 4;
+}
+
+.card {
+    background-color: var(--bege);
+    border-radius: var(--radius-8);
+    overflow: hidden;
+    box-shadow: var(--shadow-3);
+    font-family: var(--ff-poppins);
+    text-align: center;
+    position: relative;
+}
+
+.card img {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Mantém a proporção */
+}
+
+
+.card-footer {
+    background-color: var(--azulmarinho); /* Fundo do footer */
+    color: var(--branco); /* Cor do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: var(--fs-14);
+    width: 100%;
+}
+
+.card-title {
+    font-weight: var(--fw-600); /* Peso da fonte */
+    text-align: center; /* Alinha o texto horizontalmente */
+    display: inline-block; /* Opcional, mantém o conteúdo compacto */
+}
+
+/* Efeito hover no card */
+.card-price:hover {
+    background-color: var(--verdebanner);
+}
+
+.section-text {
+    margin-block: 15px 55px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-img {
+        grid-template-columns: 1fr; /* Em telas menores, os cards ocupam toda a largura */
+    }
+}
+
+/*------------------------*\
+ Cursos
+\*------------------------*/
+
+.container-img {
+    display: flex; /* Usa Grid para melhor controle do layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta o número de colunas automaticamente */
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.container-img img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do card */
+    height: auto; /* Mantém a proporção */
+    border-radius: var(--radius-5); /* Borda arredondada */
+    box-shadow: var(--shadow-1); /* Adiciona uma sombra leve */
+}
+
+@media (max-width: 768px) {
+    .container-img {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
